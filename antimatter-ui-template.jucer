@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<JUCERPROJECT id="jlQIgl" name="antimatter-ui-template" projectType="audioplug"
+              useAppConfig="0" addUsingNamespaceToJuceHeader="0" displaySplashScreen="1"
+              jucerFormatVersion="1" pluginFormats="buildAUv3,buildStandalone,buildVST3"
+              companyName="antimatter">
+  <MAINGROUP id="ImLGRz" name="antimatter-ui-template">
+    <GROUP id="{4D6A5CEB-7469-1E24-85E2-69B2B174E174}" name="amui">
+      <FILE id="iw1RuK" name="amui.h" compile="0" resource="0" file="Source/amui.h"/>
+      <FILE id="kt99fM" name="demo.h" compile="0" resource="0" file="Source/demo.h"/>
+      <FILE id="YurprL" name="amui_Combobox.h" compile="0" resource="0" file="Source/amui_Combobox.h"/>
+      <FILE id="rRmWUb" name="amui_TextHeader.h" compile="0" resource="0"
+            file="Source/amui_TextHeader.h"/>
+      <FILE id="eLxdIX" name="amui_ImageSlider.h" compile="0" resource="0"
+            file="Source/amui_ImageSlider.h"/>
+      <FILE id="o4BRH8" name="amui_ImageKnob.h" compile="0" resource="0"
+            file="Source/amui_ImageKnob.h"/>
+      <FILE id="ozin4c" name="amui_Card.h" compile="0" resource="0" file="Source/amui_Card.h"/>
+      <FILE id="zTCZYR" name="amui_TextButton.h" compile="0" resource="0"
+            file="Source/amui_TextButton.h"/>
+    </GROUP>
+    <GROUP id="{2A8AA373-2931-7AB1-92EF-9C59E3B5435D}" name="Resources">
+      <FILE id="FhpD7u" name="HelveticaNeue.ttc" compile="0" resource="1"
+            file="Source/Resources/HelveticaNeue.ttc"/>
+      <FILE id="WkPEzQ" name="knob1.png" compile="0" resource="1" file="Source/Resources/knob1.png"/>
+    </GROUP>
+    <GROUP id="{94AB84F2-CBCA-2EC0-F4CE-FE29939B2EF3}" name="Source">
+      <GROUP id="{DAFFEFDB-BE5C-D712-F54F-F38DB8987C4C}" name="Sections">
+        <FILE id="kc8MNb" name="Sections_Main.h" compile="0" resource="0" file="Source/Sections_Main.h"/>
+        <FILE id="vbAXZO" name="Sections_Header.h" compile="0" resource="0"
+              file="Source/Sections_Header.h"/>
+      </GROUP>
+      <GROUP id="{EF22C78D-5E12-CED6-4A70-6C53046F70C0}" name="Styles">
+        <FILE id="mIyakQ" name="StyleConstants.h" compile="0" resource="0"
+              file="Source/StyleConstants.h"/>
+        <FILE id="DCnj0n" name="GUI_Classes.h" compile="0" resource="0" file="Source/GUI_Classes.h"/>
+        <FILE id="ag5CN7" name="Shapes.h" compile="0" resource="0" file="Source/Shapes.h"/>
+      </GROUP>
+      <GROUP id="{ACBF6DA2-62F7-A29E-3D6E-FC7AD1B06F18}" name="APVTS">
+        <FILE id="f6fjB2" name="APVTS_ParameterLayout.h" compile="0" resource="0"
+              file="Source/APVTS_ParameterLayout.h"/>
+      </GROUP>
+      <FILE id="HlyNqz" name="PluginProcessor.cpp" compile="1" resource="0"
+            file="Source/PluginProcessor.cpp"/>
+      <FILE id="hNO0r2" name="PluginProcessor.h" compile="0" resource="0"
+            file="Source/PluginProcessor.h"/>
+      <FILE id="nWbRwN" name="PluginEditor.cpp" compile="1" resource="0"
+            file="Source/PluginEditor.cpp"/>
+      <FILE id="FJ9ERj" name="PluginEditor.h" compile="0" resource="0" file="Source/PluginEditor.h"/>
+    </GROUP>
+  </MAINGROUP>
+  <JUCEOPTIONS JUCE_STRICT_REFCOUNTEDPOINTER="1" JUCE_VST3_CAN_REPLACE_VST2="0"/>
+  <EXPORTFORMATS>
+    <XCODE_MAC targetFolder="Builds/MacOSX">
+      <CONFIGURATIONS>
+        <CONFIGURATION isDebug="1" name="Debug" targetName="antimatter-ui-template"/>
+        <CONFIGURATION isDebug="0" name="Release" targetName="antimatter-ui-template"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_audio_basics" path="../../../../../../Applications/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_devices" path="../../../../../../Applications/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_formats" path="../../../../../../Applications/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_plugin_client" path="../../../../../../Applications/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_processors" path="../../../../../../Applications/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_utils" path="../../../../../../Applications/JUCE/modules"/>
+        <MODULEPATH id="juce_core" path="../../../../../../Applications/JUCE/modules"/>
+        <MODULEPATH id="juce_data_structures" path="../../../../../../Applications/JUCE/modules"/>
+        <MODULEPATH id="juce_events" path="../../../../../../Applications/JUCE/modules"/>
+        <MODULEPATH id="juce_graphics" path="../../../../../../Applications/JUCE/modules"/>
+        <MODULEPATH id="juce_gui_basics" path="../../../../../../Applications/JUCE/modules"/>
+        <MODULEPATH id="juce_gui_extra" path="../../../../../../Applications/JUCE/modules"/>
+      </MODULEPATHS>
+    </XCODE_MAC>
+  </EXPORTFORMATS>
+  <MODULES>
+    <MODULE id="juce_audio_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_devices" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_formats" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_plugin_client" showAllCode="1" useLocalCopy="0"
+            useGlobalPath="1"/>
+    <MODULE id="juce_audio_processors" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_utils" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_core" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_data_structures" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_events" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_graphics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_gui_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_gui_extra" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+  </MODULES>
+</JUCERPROJECT>

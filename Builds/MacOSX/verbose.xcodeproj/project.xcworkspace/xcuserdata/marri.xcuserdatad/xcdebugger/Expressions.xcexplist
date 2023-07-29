@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "VerboseAudioProcessor::getGuiParams():PluginProcessor.cpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "verboseAPVTS.getRawParameterValue(&quot;octaveId_C&quot;)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SelectorComponent::SelectorComponent(VerboseAudioProcessor&amp;):Selector_Component.h">
+         <PersistentStrings>
+            <PersistentString
+               value = "RightOctaveArrow.getWidth()">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "VerboseAudioProcessorEditor::paint(juce::Graphics&amp;):PluginEditor.cpp">
+      </ContextState>
+      <ContextState
+         contextName = "std::__1::unique_ptr&lt;juce::ButtonParameterAttachment, std::__1::default_delete&lt;juce::ButtonParameterAttachment&gt; &gt; juce::makeAttachment&lt;juce::ButtonParameterAttachment, juce::Button&gt;(juce::AudioProcessorValueTreeState const&amp;, juce::String const&amp;, juce::Button&amp;):juce_AudioProcessorValueTreeState.cpp">
+      </ContextState>
+      <ContextState
+         contextName = "ScaleComponent::ScaleComponent(VerboseAudioProcessor&amp;):Scale_Component.h">
+      </ContextState>
+      <ContextState
+         contextName = "ScaleButtonWrapperComponent::ScaleButtonWrapperComponent(VerboseAudioProcessor&amp;, juce::String, juce::String):ScaleButtonWrapper_Component.h">
+      </ContextState>
+      <ContextState
+         contextName = "TriangleButtonComponent::paint(juce::Graphics&amp;):TriangleButton_Component.h">
+         <PersistentStrings>
+            <PersistentString
+               value = "ArrowButton.getWidth()">
+            </PersistentString>
+            <PersistentString
+               value = "transform">
+            </PersistentString>
+            <PersistentString
+               value = "ArrowButton.getHeight();">
+            </PersistentString>
+            <PersistentString
+               value = "ArrowButton.getHeight()/2">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "VerboseAudioProcessor::processBlock(juce::AudioBuffer&lt;float&gt;&amp;, juce::MidiBuffer&amp;):PluginProcessor.cpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "verboseAPVTS">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "VerboseAudioProcessor::VerboseAudioProcessor():PluginProcessor.h">
+         <PersistentStrings>
+            <PersistentString
+               value = "verboseAPVTS">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

@@ -1,0 +1,8 @@
+.DS_Store
+Builds/MacOSX/build/Debug
+Builds/MacOSX/build/Debug/*
+Builds/MacOSX/build/Debug/**/*
+Builds/MacOSX/build/Release/**/*
+UserInterfaceState.xcuserstate
+*/UserInterfaceState.xcuserstate
+*.xcuserstate
