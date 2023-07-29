@@ -25,9 +25,10 @@ public:
     
 //        imageKnob.setBounds (area);
 //        addAndMakeVisible(imageKnob);
-        
+        textHeader.setBounds(area);
         textButton.setBounds (area);
         addAndMakeVisible(textButton);
+        addAndMakeVisible(textHeader);
 
     }
     
@@ -51,8 +52,8 @@ public:
         area.removeFromBottom(padding);
         area.removeFromTop(padding);
         
-        grid.items = { gridItem(textButton) };
-        grid.templateRows = { Track (fr(1)) };
+        grid.items = { gridItem(textButton), gridItem(textHeader) };
+        grid.templateRows = { Track (fr(1)), Track (fr(1)) };
         grid.templateColumns = { fr(1) };
         grid.setGap(px(gap));
         grid.performLayout(juce::Rectangle<int> (area.getX(), area.getY(), area.getWidth(), 75));
@@ -68,6 +69,7 @@ private:
     AntimatterUITemplateAudioProcessor& classMemberProcessor;
     amui::ImageKnob imageKnob {juce::ImageCache::getFromMemory(BinaryData::knob1_png, BinaryData::knob1_pngSize), "ImageKnobDemoState", classMemberProcessor};
     amui::TextButton textButton { Main::classMemberProcessor, "TextButtonDemoState", "Poopy" };
+    amui::TextHeader textHeader { "Test header" };
 //    AntimatterUITemplateAudioProcessor& classMemberProcessor;
     RoundedRectangleBackground RoundedRectangleBackground;
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (Main)
