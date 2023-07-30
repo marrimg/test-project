@@ -9,3 +9,70 @@
 */
 
 #pragma once
+#include "amui.h"
+#include "GUI_Classes.h"
+#include "PluginEditor.h"
+#include "PluginProcessor.h"
+#include "Sections_Header.h"
+
+class Typography: public juce::Component
+{
+    
+public:
+    Typography()
+    {
+
+        auto area = getLocalBounds();
+    
+        sectionHeader.setBounds(area);
+        primaryTextHeader.setBounds(area);
+        secondaryTextHeader.setBounds(area);
+        addAndMakeVisible(sectionHeader);
+        addAndMakeVisible(primaryTextHeader);
+        addAndMakeVisible(secondaryTextHeader);
+
+    }
+    
+    void paint (juce::Graphics& g) override
+    {
+
+    }
+    
+    void resized() override
+    {
+        juce::Grid grid;
+        
+        using Track = juce::Grid::TrackInfo;
+        using fr = juce::Grid::Fr;
+        using px = juce::Grid::Px;
+        using gridItem = juce::GridItem;
+        
+        auto area = getLocalBounds();
+        area.removeFromRight(padding);
+        area.removeFromLeft(padding);
+        area.removeFromBottom(padding);
+        area.removeFromTop(padding);
+        
+        grid.items = {gridItem(sectionHeader), gridItem(primaryTextHeader), gridItem(secondaryTextHeader) };
+        grid.templateRows = { Track (fr(1)), Track (fr(1)), Track (fr(1)) };
+        grid.templateColumns = { fr(1) };
+        grid.setGap(px(gap));
+        grid.performLayout(juce::Rectangle<int> (area.getX(), area.getY(), area.getWidth(), area.getHeight()));
+    }
+    
+    ~Typography(){
+        setLookAndFeel(nullptr);
+    }
+    
+private:
+    int padding = 10;
+    int gap = 2;
+    amui::TextHeader sectionHeader { "Typography", amui::TextHeader::levels::SECONDARY };
+    amui::TextHeader primaryTextHeader { "Primary TextHeader" };
+    amui::TextHeader secondaryTextHeader { "Secondary TextHeader", amui::TextHeader::levels::SECONDARY };
+    
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (Typography)
+};
+
+
+

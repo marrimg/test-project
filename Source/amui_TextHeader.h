@@ -10,9 +10,9 @@
 
 #pragma once
 namespace amui {
-enum levels {PRIMARY, SECONDARY};
 class TextHeader: public juce::Component {
 public:
+    enum levels {PRIMARY, SECONDARY};
     TextHeader(juce::String text, levels level = PRIMARY){
 
         if(level == PRIMARY){

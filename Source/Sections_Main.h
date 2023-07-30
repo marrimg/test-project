@@ -14,27 +14,25 @@
 #include "PluginEditor.h"
 #include "PluginProcessor.h"
 #include "Sections_Header.h"
+#include "Sections_Inputs.h"
+#include "Sections_Buttons.h"
+#include "Sections_Sliders.h"
+#include "Sections_Typography.h"
 
 class Main: public juce::Component
 {
     
 public:
-    Main(AntimatterUITemplateAudioProcessor& p): classMemberProcessor(p), header(p)
+    Main(AntimatterUITemplateAudioProcessor& p): classMemberProcessor(p), header(p), inputs(p), buttons(p), sliders(p)
     {
 
         auto area = getLocalBounds();
     
-        textHeader.setBounds(area);
-        textButton.setBounds (area);
-        comboBox.setBounds(area);
-        knob.setBounds(area);
-        header.setBounds(area);
         addAndMakeVisible(header);
-        addAndMakeVisible(slider);
-        addAndMakeVisible(comboBox);
-        addAndMakeVisible(textButton);
-        addAndMakeVisible(textHeader);
-        addAndMakeVisible(knob);
+        addAndMakeVisible(inputs);
+        addAndMakeVisible(buttons);
+        addAndMakeVisible(sliders);
+        addAndMakeVisible(typography);
     }
     
     void paint (juce::Graphics& g) override
@@ -56,14 +54,12 @@ public:
         area.removeFromLeft(padding);
         area.removeFromBottom(padding);
         area.removeFromTop(padding);
-
         
-        grid.items = {gridItem(header),  gridItem(textButton), gridItem(textHeader), gridItem(comboBox), gridItem(knob), gridItem(slider) };
-        grid.templateRows = { Track (fr(1)), Track (fr(1)), Track (fr(1)), Track (fr(1)), Track (fr(1)), Track (fr(1)) };
+        grid.items = {gridItem(header), gridItem(inputs),  gridItem(buttons), gridItem(sliders), gridItem(typography) };
+        grid.templateRows = { Track (fr(1)), Track (fr(2)), Track (fr(2)), Track (fr(4)), Track (fr(2)) };
         grid.templateColumns = { fr(1)};
         grid.setGap(px(gap));
-        grid.performLayout(juce::Rectangle<int> (area.getX(), area.getY(), area.getWidth(), 300));
-
+        grid.performLayout(juce::Rectangle<int> (area.getX(), area.getY(), area.getWidth(), area.getHeight()));
     }
     
     ~Main(){
@@ -71,17 +67,15 @@ public:
     }
     
 private:
-    int padding = 20;
+    int padding = 10;
     int gap = 2;
     AntimatterUITemplateAudioProcessor& classMemberProcessor;
-    amui::Knob knob {Main::classMemberProcessor, "KnobDemoState", "Knob"};
-    amui::TextButton textButton { Main::classMemberProcessor, "TextButtonDemoState", "TextButton" };
-    amui::TextHeader textHeader { "TextHeader" };
-    amui::ComboBox comboBox { Main::classMemberProcessor, "ComboBoxDemoState", {"combobox option 1", "combobox option 2", "combobox option 3"} };
-    amui::Slider slider { Main::classMemberProcessor, "SliderDemoState", "Slider"};
-//    AntimatterUITemplateAudioProcessor& classMemberProcessor;
-    RoundedRectangleBackground RoundedRectangleBackground;
     Header header;
+    Inputs inputs;
+    Buttons buttons;
+    Sliders sliders;
+    Typography typography;
+    
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (Main)
 };
 
