@@ -47,8 +47,6 @@ public:
         fb.items.add(juce::FlexItem(label).withFlex (1));
 
         fb.performLayout (getLocalBounds());
-        
-
     }
     
     ~Knob(){

@@ -10,10 +10,17 @@
 
 #pragma once
 namespace amui {
+enum levels {PRIMARY, SECONDARY};
 class TextHeader: public juce::Component {
 public:
-    TextHeader(juce::String text){
-        label.setFont (juce::Font (16.0f, juce::Font::bold));
+    TextHeader(juce::String text, levels level = PRIMARY){
+
+        if(level == PRIMARY){
+            label.setFont (juce::Font (22.0f, juce::Font::bold));
+        } else if (level == SECONDARY){
+            label.setFont (juce::Font (16.0f, juce::Font::bold));
+        }
+
         label.setText (text, juce::dontSendNotification);
         addAndMakeVisible(label);
     }
