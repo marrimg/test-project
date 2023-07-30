@@ -72,7 +72,7 @@ private:
     amui::ImageKnob imageKnob {juce::ImageCache::getFromMemory(BinaryData::knob1_png, BinaryData::knob1_pngSize), "ImageKnobDemoState", classMemberProcessor};
     amui::TextButton textButton { Main::classMemberProcessor, "TextButtonDemoState", "TextButton" };
     amui::TextHeader textHeader { "TextHeader" };
-    amui::ComboBox comboBox { Main::classMemberProcessor, "ComboBoxDemoState", {"combobox option 1", "combobox option 2"} };
+    amui::ComboBox comboBox { Main::classMemberProcessor, "ComboBoxDemoState", {"combobox option 1", "combobox option 2", "combobox option 3"} };
 //    AntimatterUITemplateAudioProcessor& classMemberProcessor;
     RoundedRectangleBackground RoundedRectangleBackground;
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (Main)

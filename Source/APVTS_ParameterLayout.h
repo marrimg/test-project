@@ -24,7 +24,7 @@ AntimatterUITemplateAudioProcessor::createParameterLayout()
     // ImageKnob state
     auto ImageKnobDemoState = std::make_unique<juce::AudioParameterInt> ("ImageKnobDemoState", "ImageKnobDemoState", 0, 100, 0);
     auto TextButtonDemoState = std::make_unique<juce::AudioParameterInt>("TextButtonDemoState", "TextButtonDemoState", 0, 1, 0);
-    auto ComboBoxDemoState = std::make_unique<juce::AudioParameterInt>("ComboBoxDemoState", "ComboBoxDemoState", 1, 100, 1);
+    auto ComboBoxDemoState = std::make_unique<juce::AudioParameterInt>("ComboBoxDemoState", "ComboBoxDemoState", 1, 3, 1);
 //    auto scaleButtonToggleStateC = std::make_unique<juce::AudioParameterInt> (scaleButtonToggleState.C, scaleButtonToggleState.C, 0, 1, 0);
   
     
