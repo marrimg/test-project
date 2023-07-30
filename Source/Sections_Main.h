@@ -56,7 +56,7 @@ public:
         area.removeFromTop(padding);
         
         grid.items = {gridItem(header), gridItem(inputs),  gridItem(buttons), gridItem(sliders), gridItem(typography) };
-        grid.templateRows = { Track (fr(1)), Track (fr(2)), Track (fr(2)), Track (fr(4)), Track (fr(2)) };
+        grid.templateRows = { Track (fr(1)), Track (fr(2)), Track (fr(2)), Track (fr(2)), Track (fr(2)) };
         grid.templateColumns = { fr(1)};
         grid.setGap(px(gap));
         grid.performLayout(juce::Rectangle<int> (area.getX(), area.getY(), area.getWidth(), area.getHeight()));

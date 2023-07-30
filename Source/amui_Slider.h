@@ -14,18 +14,22 @@ class Slider: public juce::Component
 {
     
 public:
-
-    Slider(AntimatterUITemplateAudioProcessor& p, juce::String sliderAttachmentId, juce::String labelText)
+    enum directions {VERTICAL, HORIZONTAL};
+    Slider(AntimatterUITemplateAudioProcessor& p, juce::String sliderAttachmentId, juce::String labelText, directions direction = VERTICAL)
     {
+        if(direction == VERTICAL){
+            slider.setSliderStyle(juce::Slider::LinearVertical);
+        } else if (direction == HORIZONTAL) {
+            slider.setSliderStyle(juce::Slider::LinearHorizontal);
+        }
         label.setText(labelText, juce::dontSendNotification);
         slider.setTextBoxStyle (juce::Slider::NoTextBox, true, 0, 0);
+
         sliderAttachment.reset(new juce::AudioProcessorValueTreeState::SliderAttachment (p.APVTS, sliderAttachmentId, slider));
     }
     
     void paint (juce::Graphics& g) override
-    {
-//        g.fillAll (juce::Colours::black);
-    }
+    {}
     
     void resized() override
     {

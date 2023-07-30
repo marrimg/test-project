@@ -23,9 +23,9 @@ public:
     {
         auto area = getLocalBounds();
         textHeader.setBounds(area);
-        knob.setBounds(area);
-        addAndMakeVisible(slider);
         addAndMakeVisible(textHeader);
+        addAndMakeVisible(sliderVertical);
+        addAndMakeVisible(sliderHorizontal);
         addAndMakeVisible(knob);
     }
     
@@ -36,26 +36,14 @@ public:
     
     void resized() override
     {
-        juce::Grid grid;
-        
-        using Track = juce::Grid::TrackInfo;
-        using fr = juce::Grid::Fr;
-        using px = juce::Grid::Px;
-        using gridItem = juce::GridItem;
-        
-        auto area = getLocalBounds();
-        area.removeFromRight(padding);
-        area.removeFromLeft(padding);
-        area.removeFromBottom(padding);
-        area.removeFromTop(padding);
-
-        
-        grid.items = { gridItem(textHeader), gridItem(knob), gridItem(slider) };
-        grid.templateRows = { Track (fr(1)), Track (fr(1)), Track (fr(1)) };
-        grid.templateColumns = { fr(1)};
-        grid.setGap(px(gap));
-        grid.performLayout(juce::Rectangle<int> (area.getX(), area.getY(), area.getWidth(), area.getHeight()));
-
+        juce::FlexBox fb;
+        fb.flexWrap = juce::FlexBox::Wrap::wrap;
+        juce::FlexItem top  ((float) getWidth(), (float) getHeight()/2.0f, textHeader);
+        juce::FlexItem knobSection ((float) getWidth() / 3.3f, (float) getHeight()/4.0f, knob);
+        juce::FlexItem sliderVerticalSection  ((float) getWidth() / 3.3f, (float) getHeight()/4.0f, sliderVertical);
+        juce::FlexItem sliderHorizontalSection  ((float) getWidth() / 3.3f, (float) getHeight()/4.0f, sliderHorizontal);
+        fb.items.addArray ( { top, knobSection, sliderVerticalSection, sliderHorizontalSection } );
+        fb.performLayout (getLocalBounds());
     }
     
     ~Sliders(){
@@ -63,12 +51,11 @@ public:
     }
     
 private:
-    int padding = 10;
-    int gap = 2;
     AntimatterUITemplateAudioProcessor& classMemberProcessor;
     amui::Knob knob {Sliders::classMemberProcessor, "KnobDemoState", "Knob"};
     amui::TextHeader textHeader { "Sliders and knobs", amui::TextHeader::levels::SECONDARY };
-    amui::Slider slider { Sliders::classMemberProcessor, "SliderDemoState", "Slider"};
+    amui::Slider sliderVertical { Sliders::classMemberProcessor, "SliderVerticalDemoState", "Vertical Slider"};
+    amui::Slider sliderHorizontal { Sliders::classMemberProcessor, "SliderHorizontalDemoState", "Horizontal Slider", amui::Slider::directions::HORIZONTAL};
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (Sliders)
 };
 
