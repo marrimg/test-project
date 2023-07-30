@@ -8,7 +8,7 @@
     <GROUP id="{4D6A5CEB-7469-1E24-85E2-69B2B174E174}" name="amui">
       <FILE id="iw1RuK" name="amui.h" compile="0" resource="0" file="Source/amui.h"/>
       <FILE id="kt99fM" name="demo.h" compile="0" resource="0" file="Source/demo.h"/>
-      <FILE id="YurprL" name="amui_Combobox.h" compile="0" resource="0" file="Source/amui_Combobox.h"/>
+      <FILE id="YurprL" name="amui_ComboBox.h" compile="0" resource="0" file="Source/amui_ComboBox.h"/>
       <FILE id="rRmWUb" name="amui_TextHeader.h" compile="0" resource="0"
             file="Source/amui_TextHeader.h"/>
       <FILE id="eLxdIX" name="amui_ImageSlider.h" compile="0" resource="0"

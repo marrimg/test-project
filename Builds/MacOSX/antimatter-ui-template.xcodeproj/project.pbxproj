@@ -93,6 +93,7 @@
 		1E101C79DED54F01C8DE505A /* QuartzCore.framework */ /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		1FAB4E423F1E21CA47CC4198 /* include_juce_gui_extra.mm */ /* include_juce_gui_extra.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_gui_extra.mm; path = ../../JuceLibraryCode/include_juce_gui_extra.mm; sourceTree = SOURCE_ROOT; };
 		25783737EB06C96EB875D9D8 /* JucePluginDefines.h */ /* JucePluginDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = JucePluginDefines.h; path = ../../JuceLibraryCode/JucePluginDefines.h; sourceTree = SOURCE_ROOT; };
+		26ED8B879453BCC1D5A2AB9E /* amui_ComboBox.h */ /* amui_ComboBox.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = amui_ComboBox.h; path = ../../Source/amui_ComboBox.h; sourceTree = SOURCE_ROOT; };
 		28EFD50C8EC3F4E7C07FBCB2 /* amui_Card.h */ /* amui_Card.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = amui_Card.h; path = ../../Source/amui_Card.h; sourceTree = SOURCE_ROOT; };
 		2DF34C95389381B945B7B6A6 /* amui.h */ /* amui.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = amui.h; path = ../../Source/amui.h; sourceTree = SOURCE_ROOT; };
 		319CB7AA31258BB43F6FE394 /* HelveticaNeue.ttc */ /* HelveticaNeue.ttc */ = {isa = PBXFileReference; lastKnownFileType = file.ttc; name = HelveticaNeue.ttc; path = ../../Source/Resources/HelveticaNeue.ttc; sourceTree = SOURCE_ROOT; };
@@ -104,7 +105,6 @@
 		3F9BE6788847973A34A40DD0 /* Info-AUv3_AppExtension.plist */ /* Info-AUv3_AppExtension.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Info-AUv3_AppExtension.plist"; path = "Info-AUv3_AppExtension.plist"; sourceTree = SOURCE_ROOT; };
 		404B51C2C61513941B803FC9 /* BinaryData2.cpp */ /* BinaryData2.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = BinaryData2.cpp; path = ../../JuceLibraryCode/BinaryData2.cpp; sourceTree = SOURCE_ROOT; };
 		4276EB1DF5C7B14F49B4F210 /* AVFoundation.framework */ /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		48A5F868E2D29E08878D1E4B /* amui_Combobox.h */ /* amui_Combobox.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = amui_Combobox.h; path = ../../Source/amui_Combobox.h; sourceTree = SOURCE_ROOT; };
 		48E57F19BF93ACC5FB65AFAC /* knob1.png */ /* knob1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = knob1.png; path = ../../Source/Resources/knob1.png; sourceTree = SOURCE_ROOT; };
 		4E2D5110516BB555873D55A5 /* amui_TextButton.h */ /* amui_TextButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = amui_TextButton.h; path = ../../Source/amui_TextButton.h; sourceTree = SOURCE_ROOT; };
 		50A6D9556B7A5E1B0B884883 /* amui_ImageKnob.h */ /* amui_ImageKnob.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = amui_ImageKnob.h; path = ../../Source/amui_ImageKnob.h; sourceTree = SOURCE_ROOT; };
@@ -318,7 +318,7 @@
 			children = (
 				2DF34C95389381B945B7B6A6,
 				8B3B226987CA5F794173E1D1,
-				48A5F868E2D29E08878D1E4B,
+				26ED8B879453BCC1D5A2AB9E,
 				DC9044D55B14A4203CE46BF4,
 				E47647C099C782B9E7E0BABF,
 				50A6D9556B7A5E1B0B884883,
