@@ -13,12 +13,13 @@
 #include "GUI_Classes.h"
 #include "PluginEditor.h"
 #include "PluginProcessor.h"
+#include "Sections_Header.h"
 
 class Main: public juce::Component
 {
     
 public:
-    Main(AntimatterUITemplateAudioProcessor& p): classMemberProcessor(p)
+    Main(AntimatterUITemplateAudioProcessor& p): classMemberProcessor(p), header(p)
     {
 
         auto area = getLocalBounds();
@@ -27,6 +28,8 @@ public:
         textButton.setBounds (area);
         comboBox.setBounds(area);
         knob.setBounds(area);
+        header.setBounds(area);
+        addAndMakeVisible(header);
         addAndMakeVisible(slider);
         addAndMakeVisible(comboBox);
         addAndMakeVisible(textButton);
@@ -55,8 +58,8 @@ public:
         area.removeFromTop(padding);
 
         
-        grid.items = { gridItem(textButton), gridItem(textHeader), gridItem(comboBox), gridItem(knob), gridItem(slider) };
-        grid.templateRows = { Track (fr(1)), Track (fr(1)), Track (fr(1)), Track (fr(1)), Track (fr(1)) };
+        grid.items = {gridItem(header),  gridItem(textButton), gridItem(textHeader), gridItem(comboBox), gridItem(knob), gridItem(slider) };
+        grid.templateRows = { Track (fr(1)), Track (fr(1)), Track (fr(1)), Track (fr(1)), Track (fr(1)), Track (fr(1)) };
         grid.templateColumns = { fr(1)};
         grid.setGap(px(gap));
         grid.performLayout(juce::Rectangle<int> (area.getX(), area.getY(), area.getWidth(), 300));
@@ -78,6 +81,7 @@ private:
     amui::Slider slider { Main::classMemberProcessor, "SliderDemoState", "Slider"};
 //    AntimatterUITemplateAudioProcessor& classMemberProcessor;
     RoundedRectangleBackground RoundedRectangleBackground;
+    Header header;
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (Main)
 };
 

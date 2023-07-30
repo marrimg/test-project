@@ -6,6 +6,7 @@
               companyName="antimatter">
   <MAINGROUP id="ImLGRz" name="antimatter-ui-template">
     <GROUP id="{4D6A5CEB-7469-1E24-85E2-69B2B174E174}" name="amui">
+      <FILE id="voa2bP" name="amui_Card.h" compile="0" resource="0" file="Source/amui_Card.h"/>
       <FILE id="iw1RuK" name="amui.h" compile="0" resource="0" file="Source/amui.h"/>
       <FILE id="kt99fM" name="demo.h" compile="0" resource="0" file="Source/demo.h"/>
       <FILE id="YurprL" name="amui_ComboBox.h" compile="0" resource="0" file="Source/amui_ComboBox.h"/>
@@ -13,7 +14,6 @@
             file="Source/amui_TextHeader.h"/>
       <FILE id="eLxdIX" name="amui_Slider.h" compile="0" resource="0" file="Source/amui_Slider.h"/>
       <FILE id="o4BRH8" name="amui_Knob.h" compile="0" resource="0" file="Source/amui_Knob.h"/>
-      <FILE id="ozin4c" name="amui_Card.h" compile="0" resource="0" file="Source/amui_Card.h"/>
       <FILE id="zTCZYR" name="amui_TextButton.h" compile="0" resource="0"
             file="Source/amui_TextButton.h"/>
     </GROUP>
@@ -24,6 +24,14 @@
     </GROUP>
     <GROUP id="{94AB84F2-CBCA-2EC0-F4CE-FE29939B2EF3}" name="Source">
       <GROUP id="{DAFFEFDB-BE5C-D712-F54F-F38DB8987C4C}" name="Sections">
+        <FILE id="GTQImV" name="Sections_Typography.h" compile="0" resource="0"
+              file="Source/Sections_Typography.h"/>
+        <FILE id="FxqFsp" name="Sections_Inputs.h" compile="0" resource="0"
+              file="Source/Sections_Inputs.h"/>
+        <FILE id="aHjYy2" name="Sections_Buttons.h" compile="0" resource="0"
+              file="Source/Sections_Buttons.h"/>
+        <FILE id="UoIQ4n" name="Sections_Sliders.h" compile="0" resource="0"
+              file="Source/Sections_Sliders.h"/>
         <FILE id="kc8MNb" name="Sections_Main.h" compile="0" resource="0" file="Source/Sections_Main.h"/>
         <FILE id="vbAXZO" name="Sections_Header.h" compile="0" resource="0"
               file="Source/Sections_Header.h"/>
