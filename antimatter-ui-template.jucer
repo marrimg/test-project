@@ -11,10 +11,8 @@
       <FILE id="YurprL" name="amui_ComboBox.h" compile="0" resource="0" file="Source/amui_ComboBox.h"/>
       <FILE id="rRmWUb" name="amui_TextHeader.h" compile="0" resource="0"
             file="Source/amui_TextHeader.h"/>
-      <FILE id="eLxdIX" name="amui_ImageSlider.h" compile="0" resource="0"
-            file="Source/amui_ImageSlider.h"/>
-      <FILE id="o4BRH8" name="amui_ImageKnob.h" compile="0" resource="0"
-            file="Source/amui_ImageKnob.h"/>
+      <FILE id="eLxdIX" name="amui_Slider.h" compile="0" resource="0" file="Source/amui_Slider.h"/>
+      <FILE id="o4BRH8" name="amui_Knob.h" compile="0" resource="0" file="Source/amui_Knob.h"/>
       <FILE id="ozin4c" name="amui_Card.h" compile="0" resource="0" file="Source/amui_Card.h"/>
       <FILE id="zTCZYR" name="amui_TextButton.h" compile="0" resource="0"
             file="Source/amui_TextButton.h"/>

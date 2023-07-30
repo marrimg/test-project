@@ -4,20 +4,20 @@
 
 namespace amui {
 //This works for framed knobs or sliders
-class ImageKnob : public juce::Slider
+class Knob : public juce::Slider
 {
 public:
-    ImageKnob(juce::Image image, juce::String attachmentId, AntimatterUITemplateAudioProcessor& p, const int numFrames = 50, const bool stripIsHorizontal = false, int index = 0)
+    Knob(juce::Image image, juce::String attachmentId, AntimatterUITemplateAudioProcessor& p, const int numFrames = 50, const bool stripIsHorizontal = false, int index = 0)
     :  Slider(juce::String(index)),
     filmStrip(image),
     numFrames_(numFrames),
     isHorizontal_(stripIsHorizontal)
+
     {
-
-
+        Slider.setBounds(0, 0, 10, 10);
         if(filmStrip.isValid())
         {
-            ImageKnobAttachment.reset(new juce::AudioProcessorValueTreeState::SliderAttachment (p.APVTS, attachmentId, Slider));
+            KnobAttachment.reset(new juce::AudioProcessorValueTreeState::SliderAttachment (p.APVTS, attachmentId, Slider));
 
             setTextBoxStyle(NoTextBox, 0, 0, 0);
             setSliderStyle(RotaryVerticalDrag);
@@ -40,13 +40,17 @@ public:
             }
         }
     }
+    
+    void resized() override {
+        Slider.setBounds(0, 0, 10, 10);
+    }
 
-    ~ImageKnob(){
-        ImageKnobAttachment.reset();
+    ~Knob(){
+        KnobAttachment.reset();
     }
     
 private:
-    std::unique_ptr<juce::AudioProcessorValueTreeState::SliderAttachment> ImageKnobAttachment;
+    std::unique_ptr<juce::AudioProcessorValueTreeState::SliderAttachment> KnobAttachment;
     juce::Slider Slider;
     juce::Image filmStrip;
     const int numFrames_;

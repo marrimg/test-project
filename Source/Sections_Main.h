@@ -23,15 +23,14 @@ public:
 
         auto area = getLocalBounds();
     
-//        imageKnob.setBounds (area);
-//        addAndMakeVisible(imageKnob);
         textHeader.setBounds(area);
         textButton.setBounds (area);
         comboBox.setBounds(area);
+        knob.setBounds(0, 0, 10, 10);
         addAndMakeVisible(comboBox);
         addAndMakeVisible(textButton);
         addAndMakeVisible(textHeader);
-
+        addAndMakeVisible(knob);
     }
     
     void paint (juce::Graphics& g) override
@@ -53,12 +52,15 @@ public:
         area.removeFromLeft(padding);
         area.removeFromBottom(padding);
         area.removeFromTop(padding);
+
         
-        grid.items = { gridItem(textButton), gridItem(textHeader), gridItem(comboBox) };
-        grid.templateRows = { Track (fr(1)), Track (fr(1)), Track (fr(1)) };
-        grid.templateColumns = { fr(1) };
+        grid.items = { gridItem(textButton), gridItem(textHeader), gridItem(comboBox), gridItem(knob) };
+        grid.templateRows = { Track (fr(1)), Track (fr(1)), Track (fr(1)), Track (fr(1)) };
+        grid.templateColumns = { fr(2), fr(2), fr(2), fr(1) };
         grid.setGap(px(gap));
-        grid.performLayout(juce::Rectangle<int> (area.getX(), area.getY(), area.getWidth(), 75));
+        knob.setBounds(0, 0, 10, 10);
+        grid.performLayout(juce::Rectangle<int> (area.getX(), area.getY(), area.getWidth(), 175));
+
     }
     
     ~Main(){
@@ -69,7 +71,7 @@ private:
     int padding = 20;
     int gap = 2;
     AntimatterUITemplateAudioProcessor& classMemberProcessor;
-    amui::ImageKnob imageKnob {juce::ImageCache::getFromMemory(BinaryData::knob1_png, BinaryData::knob1_pngSize), "ImageKnobDemoState", classMemberProcessor};
+    amui::Knob knob {juce::ImageCache::getFromMemory(BinaryData::knob1_png, BinaryData::knob1_pngSize), "KnobDemoState", classMemberProcessor};
     amui::TextButton textButton { Main::classMemberProcessor, "TextButtonDemoState", "TextButton" };
     amui::TextHeader textHeader { "TextHeader" };
     amui::ComboBox comboBox { Main::classMemberProcessor, "ComboBoxDemoState", {"combobox option 1", "combobox option 2", "combobox option 3"} };

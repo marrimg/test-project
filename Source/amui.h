@@ -9,13 +9,13 @@
 */
 
 #pragma once
-#include "amui_ImageKnob.h"
+#include "amui_Knob.h"
 #include "amui_TextButton.h"
 #include "amui_TextHeader.h"
 #include "amui_ComboBox.h"
 
 namespace amui {
-    class ImageKnob;
+    class Knob;
     class TextButton;
     class TextHeader;
     class ComboBox;

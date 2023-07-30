@@ -21,15 +21,16 @@ AntimatterUITemplateAudioProcessor::createParameterLayout()
     juce::AudioProcessorValueTreeState::ParameterLayout layout;
     
     // AMUI Component Demo State
-    // ImageKnob state
-    auto ImageKnobDemoState = std::make_unique<juce::AudioParameterInt> ("ImageKnobDemoState", "ImageKnobDemoState", 0, 100, 0);
+    // Knob state
+    auto KnobDemoState = std::make_unique<juce::AudioParameterInt> ("KnobDemoState", "KnobDemoState", 0, 100, 0);
     auto TextButtonDemoState = std::make_unique<juce::AudioParameterInt>("TextButtonDemoState", "TextButtonDemoState", 0, 1, 0);
     auto ComboBoxDemoState = std::make_unique<juce::AudioParameterInt>("ComboBoxDemoState", "ComboBoxDemoState", 1, 3, 1);
+
 //    auto scaleButtonToggleStateC = std::make_unique<juce::AudioParameterInt> (scaleButtonToggleState.C, scaleButtonToggleState.C, 0, 1, 0);
   
     
     layout.add(
-               std::move(ImageKnobDemoState),
+               std::move(KnobDemoState),
                std::move(TextButtonDemoState),
                std::move(ComboBoxDemoState)
                );
