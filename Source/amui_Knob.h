@@ -1,61 +1,47 @@
+/*
+  ==============================================================================
+
+    Knob.h
+    Created: 19 Jun 2023 2:25:30pm
+    Author:  Marri Gamard
+
+  ==============================================================================
+*/
 
 #pragma once
-#include <JuceHeader.h>
-
 namespace amui {
-//This works for framed knobs or sliders
-class Knob : public juce::Slider
+class Knob: public juce::Component
 {
+    
 public:
-    Knob(juce::Image image, juce::String attachmentId, AntimatterUITemplateAudioProcessor& p, const int numFrames = 50, const bool stripIsHorizontal = false, int index = 0)
-    :  Slider(juce::String(index)),
-    filmStrip(image),
-    numFrames_(numFrames),
-    isHorizontal_(stripIsHorizontal)
 
+    Knob(AntimatterUITemplateAudioProcessor& p, juce::String knobAttachmentId, juce::String label)
     {
-        Slider.setBounds(0, 0, 10, 10);
-        if(filmStrip.isValid())
-        {
-            KnobAttachment.reset(new juce::AudioProcessorValueTreeState::SliderAttachment (p.APVTS, attachmentId, Slider));
-
-            setTextBoxStyle(NoTextBox, 0, 0, 0);
-            setSliderStyle(RotaryVerticalDrag);
-            frameHeight = filmStrip.getHeight() / numFrames_;
-            frameWidth = filmStrip.getWidth();
-            setRange(0.0f, 1.0f, 0.001f);
-        }
+        knob.setSliderStyle (juce::Slider::SliderStyle::Rotary);
+        knob.setTextBoxStyle (juce::Slider::NoTextBox, true, 0, 0);
+        knobAttachment.reset(new juce::AudioProcessorValueTreeState::SliderAttachment (p.APVTS, knobAttachmentId, knob));
     }
     
-    void paint(juce::Graphics& g) override
+    void paint (juce::Graphics& g) override
     {
-        if(filmStrip.isValid()) {
-            int value = (int)((getValue() - getMinimum()) / (getMaximum() - getMinimum()) * (numFrames_ - 1));
-            if(isHorizontal_) {
-                g.drawImage(filmStrip, 0, 0, getWidth(), getHeight(),
-                            value * frameWidth, 0, frameWidth, frameHeight);
-            } else {
-                g.drawImage(filmStrip, 0, 0, getWidth(), getHeight(),
-                            0, value * frameHeight, frameWidth, frameHeight);
-            }
-        }
+//        g.fillAll (juce::Colours::black);
     }
     
-    void resized() override {
-        Slider.setBounds(0, 0, 10, 10);
+    void resized() override
+    {
+        auto area = getLocalBounds();
+        knob.setBounds(area);
+        addAndMakeVisible(knob);
     }
-
+    
     ~Knob(){
-        KnobAttachment.reset();
+        knobAttachment.reset();
     }
     
 private:
-    std::unique_ptr<juce::AudioProcessorValueTreeState::SliderAttachment> KnobAttachment;
-    juce::Slider Slider;
-    juce::Image filmStrip;
-    const int numFrames_;
-    const bool isHorizontal_;
-    int frameWidth, frameHeight;
+    juce::Slider knob;
+    std::unique_ptr<juce::AudioProcessorValueTreeState::SliderAttachment> knobAttachment;
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (Knob)
 };
-} // namespace
+};
 

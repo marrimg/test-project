@@ -26,7 +26,8 @@ public:
         textHeader.setBounds(area);
         textButton.setBounds (area);
         comboBox.setBounds(area);
-        knob.setBounds(0, 0, 10, 10);
+        knob.setBounds(area);
+        addAndMakeVisible(slider);
         addAndMakeVisible(comboBox);
         addAndMakeVisible(textButton);
         addAndMakeVisible(textHeader);
@@ -54,12 +55,11 @@ public:
         area.removeFromTop(padding);
 
         
-        grid.items = { gridItem(textButton), gridItem(textHeader), gridItem(comboBox), gridItem(knob) };
-        grid.templateRows = { Track (fr(1)), Track (fr(1)), Track (fr(1)), Track (fr(1)) };
-        grid.templateColumns = { fr(2), fr(2), fr(2), fr(1) };
+        grid.items = { gridItem(textButton), gridItem(textHeader), gridItem(comboBox), gridItem(knob), gridItem(slider) };
+        grid.templateRows = { Track (fr(1)), Track (fr(1)), Track (fr(1)), Track (fr(1)), Track (fr(1)) };
+        grid.templateColumns = { fr(1)};
         grid.setGap(px(gap));
-        knob.setBounds(0, 0, 10, 10);
-        grid.performLayout(juce::Rectangle<int> (area.getX(), area.getY(), area.getWidth(), 175));
+        grid.performLayout(juce::Rectangle<int> (area.getX(), area.getY(), area.getWidth(), 300));
 
     }
     
@@ -71,10 +71,11 @@ private:
     int padding = 20;
     int gap = 2;
     AntimatterUITemplateAudioProcessor& classMemberProcessor;
-    amui::Knob knob {juce::ImageCache::getFromMemory(BinaryData::knob1_png, BinaryData::knob1_pngSize), "KnobDemoState", classMemberProcessor};
+    amui::Knob knob {Main::classMemberProcessor, "KnobDemoState", "Knob"};
     amui::TextButton textButton { Main::classMemberProcessor, "TextButtonDemoState", "TextButton" };
     amui::TextHeader textHeader { "TextHeader" };
     amui::ComboBox comboBox { Main::classMemberProcessor, "ComboBoxDemoState", {"combobox option 1", "combobox option 2", "combobox option 3"} };
+    amui::Slider slider { Main::classMemberProcessor, "SliderDemoState", "Slider"};
 //    AntimatterUITemplateAudioProcessor& classMemberProcessor;
     RoundedRectangleBackground RoundedRectangleBackground;
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (Main)
