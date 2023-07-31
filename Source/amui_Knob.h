@@ -15,7 +15,7 @@ class Knob: public juce::Component
     
 public:
 
-    Knob(AntimatterUITemplateAudioProcessor& p, juce::String knobAttachmentId, juce::String labelText)
+    Knob(AntimatterUITemplateAudioProcessor& p, juce::String knobAttachmentId, juce::String labelText = "")
     {
         label.setText(labelText, juce::dontSendNotification);
         knob.setSliderStyle (juce::Slider::SliderStyle::Rotary);
@@ -31,6 +31,9 @@ public:
     
     void resized() override
     {
+        if(label.getText().length() > 0){
+            addAndMakeVisible(label);
+        }
         auto area = getLocalBounds();
         knob.setBounds(area);
         label.setBounds(area);

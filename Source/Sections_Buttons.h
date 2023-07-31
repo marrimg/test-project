@@ -14,7 +14,7 @@
 #include "PluginEditor.h"
 #include "PluginProcessor.h"
 
-class Buttons: public amui::Card
+class Buttons: public juce::Component
 {
     
 public:

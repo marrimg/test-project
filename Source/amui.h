@@ -14,7 +14,8 @@
 #include "amui_TextButton.h"
 #include "amui_TextHeader.h"
 #include "amui_ComboBox.h"
-#include "amui_Card.h"
+#include "amui_LED.h"
+#include "amui_TextBlock.h"
 
 namespace amui {
     class Knob;
@@ -22,7 +23,8 @@ namespace amui {
     class TextButton;
     class TextHeader;
     class ComboBox;
-    class Card;
+    class LED;
+    class TextBlock;
 }
 
 

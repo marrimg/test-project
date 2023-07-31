@@ -139,9 +139,6 @@ void AntimatterUITemplateAudioProcessor::processBlock (juce::AudioBuffer<float>&
     
 //    getGuiParams();
     
-
-    
-    std::cout << KnobDemoState->load() << "TESTYTEST666420" << '\n';
     for (auto i = totalNumInputChannels; i < totalNumOutputChannels; ++i)
         buffer.clear (i, 0, buffer.getNumSamples());
 

@@ -13,7 +13,6 @@ namespace amui {
 class ComboBox: public juce::Component {
 public:
     ComboBox(AntimatterUITemplateAudioProcessor& p, juce::String ComboBoxAttachmentId, std::vector<juce::String> items){
-//        addAndMakeVisible(comboBox);
         for(auto i=0; i<items.size(); i++){
             comboBox.addItem(items.at(i), i+1);
         }

@@ -11,7 +11,7 @@ AntimatterUITemplateAudioProcessorEditor::AntimatterUITemplateAudioProcessorEdit
     mainComponent.setBounds (0, 0, getWidth(), getHeight());
     addAndMakeVisible(mainComponent);
     
-    setSize (800, 600);
+    setSize (800, 800);
 }
 
 AntimatterUITemplateAudioProcessorEditor::~AntimatterUITemplateAudioProcessorEditor()

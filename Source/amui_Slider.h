@@ -15,7 +15,7 @@ class Slider: public juce::Component
     
 public:
     enum directions {VERTICAL, HORIZONTAL};
-    Slider(AntimatterUITemplateAudioProcessor& p, juce::String sliderAttachmentId, juce::String labelText, directions direction = VERTICAL)
+    Slider(AntimatterUITemplateAudioProcessor& p, juce::String sliderAttachmentId, directions direction = VERTICAL, juce::String labelText = "")
     {
         if(direction == VERTICAL){
             slider.setSliderStyle(juce::Slider::LinearVertical);
@@ -33,6 +33,9 @@ public:
     
     void resized() override
     {
+        if(label.getText().length() > 0){
+            addAndMakeVisible(label);
+        }
         auto area = getLocalBounds();
         slider.setBounds(area);
         label.setBounds(area);

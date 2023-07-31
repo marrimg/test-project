@@ -15,10 +15,10 @@ class TextButton: public juce::Component
     
 public:
 
-    TextButton(AntimatterUITemplateAudioProcessor& p, juce::String ButtonAttachmentId, juce::String label)
+    TextButton(AntimatterUITemplateAudioProcessor& p, juce::String ButtonAttachmentId, juce::String buttonText)
     {
         button.setClickingTogglesState(1);
-        button.setButtonText(label);
+        button.setButtonText(buttonText);
         addAndMakeVisible(button);
         buttonAttachment.reset(new juce::AudioProcessorValueTreeState::ButtonAttachment (p.APVTS, ButtonAttachmentId, button));
         auto area = getLocalBounds();
@@ -28,7 +28,6 @@ public:
     
     void paint (juce::Graphics& g) override
     {
-//        g.fillAll (juce::Colours::black);
     }
     
     void resized() override

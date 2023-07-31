@@ -27,10 +27,11 @@ public:
         sectionHeader.setBounds(area);
         primaryTextHeader.setBounds(area);
         secondaryTextHeader.setBounds(area);
+        textBlock.setBounds(area);
         addAndMakeVisible(sectionHeader);
         addAndMakeVisible(primaryTextHeader);
         addAndMakeVisible(secondaryTextHeader);
-
+        addAndMakeVisible(textBlock);
     }
     
     void paint (juce::Graphics& g) override
@@ -53,8 +54,8 @@ public:
         area.removeFromBottom(padding);
         area.removeFromTop(padding);
         
-        grid.items = {gridItem(sectionHeader), gridItem(primaryTextHeader), gridItem(secondaryTextHeader) };
-        grid.templateRows = { Track (fr(1)), Track (fr(1)), Track (fr(1)) };
+        grid.items = {gridItem(sectionHeader), gridItem(primaryTextHeader), gridItem(secondaryTextHeader), gridItem(textBlock) };
+        grid.templateRows = { Track (fr(1)), Track (fr(1)), Track (fr(1)), Track (fr(1)) };
         grid.templateColumns = { fr(1) };
         grid.setGap(px(gap));
         grid.performLayout(juce::Rectangle<int> (area.getX(), area.getY(), area.getWidth(), area.getHeight()));
@@ -70,6 +71,7 @@ private:
     amui::TextHeader sectionHeader { "Typography", amui::TextHeader::levels::SECONDARY };
     amui::TextHeader primaryTextHeader { "Primary TextHeader" };
     amui::TextHeader secondaryTextHeader { "Secondary TextHeader", amui::TextHeader::levels::SECONDARY };
+    amui::TextBlock textBlock {"This is a text block. It displays a block of text."};
     
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (Typography)
 };

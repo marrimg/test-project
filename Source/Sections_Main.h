@@ -18,6 +18,7 @@
 #include "Sections_Buttons.h"
 #include "Sections_Sliders.h"
 #include "Sections_Typography.h"
+#include "Sections_Feedback.h"
 
 class Main: public juce::Component
 {
@@ -25,12 +26,10 @@ class Main: public juce::Component
 public:
     Main(AntimatterUITemplateAudioProcessor& p): classMemberProcessor(p), header(p), inputs(p), buttons(p), sliders(p)
     {
-
-        auto area = getLocalBounds();
-    
         addAndMakeVisible(header);
         addAndMakeVisible(inputs);
         addAndMakeVisible(buttons);
+        addAndMakeVisible(feedback);
         addAndMakeVisible(sliders);
         addAndMakeVisible(typography);
     }
@@ -55,9 +54,9 @@ public:
         area.removeFromBottom(padding);
         area.removeFromTop(padding);
         
-        grid.items = {gridItem(header), gridItem(inputs),  gridItem(buttons), gridItem(sliders), gridItem(typography) };
-        grid.templateRows = { Track (fr(1)), Track (fr(2)), Track (fr(2)), Track (fr(2)), Track (fr(2)) };
-        grid.templateColumns = { fr(1)};
+        grid.items = {gridItem(header), gridItem(inputs), gridItem(feedback), gridItem(buttons), gridItem(sliders), gridItem(typography)};
+        grid.templateRows = { Track (fr(1)), Track (fr(1)), Track (fr(1)), Track (fr(1)), Track (fr(2)), Track (fr(1)) };
+        grid.templateColumns = { fr(1) };
         grid.setGap(px(gap));
         grid.performLayout(juce::Rectangle<int> (area.getX(), area.getY(), area.getWidth(), area.getHeight()));
     }
@@ -75,6 +74,7 @@ private:
     Buttons buttons;
     Sliders sliders;
     Typography typography;
+    Feedback feedback;
     
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (Main)
 };

@@ -54,8 +54,8 @@ private:
     AntimatterUITemplateAudioProcessor& classMemberProcessor;
     amui::Knob knob {Sliders::classMemberProcessor, "KnobDemoState", "Knob"};
     amui::TextHeader textHeader { "Sliders and knobs", amui::TextHeader::levels::SECONDARY };
-    amui::Slider sliderVertical { Sliders::classMemberProcessor, "SliderVerticalDemoState", "Vertical Slider"};
-    amui::Slider sliderHorizontal { Sliders::classMemberProcessor, "SliderHorizontalDemoState", "Horizontal Slider", amui::Slider::directions::HORIZONTAL};
+    amui::Slider sliderVertical { Sliders::classMemberProcessor, "SliderVerticalDemoState", amui::Slider::directions::VERTICAL, "Vertical Slider"};
+    amui::Slider sliderHorizontal { Sliders::classMemberProcessor, "SliderHorizontalDemoState", amui::Slider::directions::HORIZONTAL, "Horizontal Slider"};
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (Sliders)
 };
 
