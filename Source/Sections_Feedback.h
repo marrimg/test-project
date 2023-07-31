@@ -20,6 +20,7 @@ public:
     Feedback()
     {
         addAndMakeVisible(textHeader);
+        addAndMakeVisible(ledHeader);
         addAndMakeVisible(ledOn);
         addAndMakeVisible(ledOff);
     }
@@ -38,11 +39,6 @@ public:
         ledOn.setBounds(area);
         ledOff.setBounds(area);
         ledOn.setState(amui::LED::states::ON);
-        
-        addAndMakeVisible(textHeader);
-        addAndMakeVisible(ledHeader);
-        addAndMakeVisible(ledOn);
-        addAndMakeVisible(ledOff);
         
         juce::FlexBox fb;
         fb.flexWrap = juce::FlexBox::Wrap::wrap;

@@ -27,7 +27,6 @@ public:
     {
         auto area = getLocalBounds();
         textHeader.setBounds(area);
-        addAndMakeVisible(textHeader);
 
     }
     
