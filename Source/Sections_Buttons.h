@@ -35,6 +35,13 @@ public:
     
     void resized() override
     {
+        
+        auto area = getLocalBounds();
+        area.removeFromRight(padding);
+        area.removeFromLeft(padding);
+        area.removeFromBottom(padding);
+        area.removeFromTop(padding);
+        
         juce::Grid grid;
         
         using Track = juce::Grid::TrackInfo;
@@ -42,18 +49,13 @@ public:
         using px = juce::Grid::Px;
         using gridItem = juce::GridItem;
         
-        auto area = getLocalBounds();
-        area.removeFromRight(padding);
-        area.removeFromLeft(padding);
-        area.removeFromBottom(padding);
-        area.removeFromTop(padding);
+        juce::FlexBox fb;
+        fb.flexDirection = juce::FlexBox::Direction::column;
 
-        
-        grid.items = { gridItem(textHeader), gridItem(textButton) };
-        grid.templateRows = { Track (fr(1)), Track (fr(1)) };
-        grid.templateColumns = { fr(1)};
-        grid.setGap(px(gap));
-        grid.performLayout(juce::Rectangle<int> (area.getX(), area.getY(), area.getWidth(), area.getHeight()));
+        fb.items.add(juce::FlexItem(textHeader).withFlex (1));
+        fb.items.add(juce::FlexItem(textButton).withFlex (1));
+
+        fb.performLayout (area);
     }
     
     ~Buttons(){

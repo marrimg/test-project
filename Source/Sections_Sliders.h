@@ -36,6 +36,12 @@ public:
     
     void resized() override
     {
+        auto area = getLocalBounds();
+        area.removeFromRight(padding);
+        area.removeFromLeft(padding);
+        area.removeFromBottom(padding);
+        area.removeFromTop(padding);
+        
         juce::FlexBox fb;
         fb.flexWrap = juce::FlexBox::Wrap::wrap;
         juce::FlexItem top  ((float) getWidth(), (float) getHeight()/2.0f, textHeader);
@@ -43,7 +49,7 @@ public:
         juce::FlexItem sliderVerticalSection  ((float) getWidth() / 3.3f, (float) getHeight()/4.0f, sliderVertical);
         juce::FlexItem sliderHorizontalSection  ((float) getWidth() / 3.3f, (float) getHeight()/4.0f, sliderHorizontal);
         fb.items.addArray ( { top, knobSection, sliderVerticalSection, sliderHorizontalSection } );
-        fb.performLayout (getLocalBounds());
+        fb.performLayout (area);
     }
     
     ~Sliders(){
@@ -51,6 +57,7 @@ public:
     }
     
 private:
+    int padding = 10;
     AntimatterUITemplateAudioProcessor& classMemberProcessor;
     amui::Knob knob {Sliders::classMemberProcessor, "KnobDemoState", "Knob"};
     amui::TextHeader textHeader { "Sliders and knobs", amui::TextHeader::levels::SECONDARY };

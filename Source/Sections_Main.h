@@ -41,6 +41,12 @@ public:
     
     void resized() override
     {
+        auto area = getLocalBounds();
+        area.removeFromRight(padding);
+        area.removeFromLeft(padding);
+        area.removeFromBottom(padding);
+        area.removeFromTop(padding);
+        
         juce::Grid grid;
         
         using Track = juce::Grid::TrackInfo;
@@ -48,17 +54,17 @@ public:
         using px = juce::Grid::Px;
         using gridItem = juce::GridItem;
         
-        auto area = getLocalBounds();
-        area.removeFromRight(padding);
-        area.removeFromLeft(padding);
-        area.removeFromBottom(padding);
-        area.removeFromTop(padding);
-        
-        grid.items = {gridItem(header), gridItem(inputs), gridItem(feedback), gridItem(buttons), gridItem(sliders), gridItem(typography)};
-        grid.templateRows = { Track (fr(1)), Track (fr(1)), Track (fr(1)), Track (fr(1)), Track (fr(2)), Track (fr(1)) };
-        grid.templateColumns = { fr(1) };
-        grid.setGap(px(gap));
-        grid.performLayout(juce::Rectangle<int> (area.getX(), area.getY(), area.getWidth(), area.getHeight()));
+        juce::FlexBox fb;
+        fb.flexDirection = juce::FlexBox::Direction::column;
+
+        fb.items.add(juce::FlexItem(header).withFlex (1));
+        fb.items.add(juce::FlexItem(inputs).withFlex (1));
+        fb.items.add(juce::FlexItem(feedback).withFlex (2));
+        fb.items.add(juce::FlexItem(buttons).withFlex (1));
+        fb.items.add(juce::FlexItem(sliders).withFlex (3));
+        fb.items.add(juce::FlexItem(typography).withFlex (3));
+
+        fb.performLayout (area);
     }
     
     ~Main(){

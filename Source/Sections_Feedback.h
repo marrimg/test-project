@@ -29,12 +29,19 @@ public:
     void resized() override
     {
         auto area = getLocalBounds();
+        area.removeFromRight(padding);
+        area.removeFromLeft(padding);
+        area.removeFromBottom(padding);
+        area.removeFromTop(padding);
+        
         textHeader.setBounds(area);
+        ledHeader.setBounds(area);
         ledOn.setBounds(area);
         ledOff.setBounds(area);
         ledOn.setState(amui::LED::states::ON);
         
         addAndMakeVisible(textHeader);
+        addAndMakeVisible(ledHeader);
         addAndMakeVisible(ledOn);
         addAndMakeVisible(ledOff);
         
@@ -45,19 +52,14 @@ public:
         using px = juce::Grid::Px;
         using gridItem = juce::GridItem;
         
-
-        area.removeFromRight(padding);
-        area.removeFromLeft(padding);
-        area.removeFromBottom(padding);
-        area.removeFromTop(padding);
-        
         juce::FlexBox fb;
         fb.flexWrap = juce::FlexBox::Wrap::wrap;
-        juce::FlexItem top  ((float) getWidth(), (float) getHeight()/2.0f, textHeader);
+        juce::FlexItem title  ((float) getWidth(), (float) getHeight()/4.0f, textHeader);
+        juce::FlexItem sectionHeader  ((float) getWidth(), (float) getHeight()/4.0f, ledHeader);
         juce::FlexItem ledOnSection ((float) getWidth() / 3.3f, (float) getHeight()/4.0f, ledOn);
         juce::FlexItem ledOffSection  ((float) getWidth() / 3.3f, (float) getHeight()/4.0f, ledOff);
-        fb.items.addArray ( { top, ledOnSection, ledOffSection } );
-        fb.performLayout (getLocalBounds());
+        fb.items.addArray ( { title, sectionHeader, ledOnSection, ledOffSection } );
+        fb.performLayout (area);
     }
     
     ~Feedback(){
@@ -67,8 +69,10 @@ public:
 private:
     int padding = 10;
     amui::TextHeader textHeader {"Visual feedback", amui::TextHeader::levels::SECONDARY};
+    amui::TextHeader ledHeader {"LEDs on/off", amui::TextHeader::levels::SECONDARY};
     amui::LED ledOn;
     amui::LED ledOff;
+    juce::Label label;
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (Feedback)
 };
 

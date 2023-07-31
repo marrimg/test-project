@@ -54,11 +54,14 @@ public:
         area.removeFromBottom(padding);
         area.removeFromTop(padding);
         
-        grid.items = {gridItem(sectionHeader), gridItem(primaryTextHeader), gridItem(secondaryTextHeader), gridItem(textBlock) };
-        grid.templateRows = { Track (fr(1)), Track (fr(1)), Track (fr(1)), Track (fr(1)) };
-        grid.templateColumns = { fr(1) };
-        grid.setGap(px(gap));
-        grid.performLayout(juce::Rectangle<int> (area.getX(), area.getY(), area.getWidth(), area.getHeight()));
+        juce::FlexBox fb;
+        fb.flexDirection = juce::FlexBox::Direction::column;
+
+        fb.items.add(juce::FlexItem(sectionHeader).withFlex (1));
+        fb.items.add(juce::FlexItem(primaryTextHeader).withFlex (1));
+        fb.items.add(juce::FlexItem(secondaryTextHeader).withFlex (1));
+        fb.items.add(juce::FlexItem(textBlock).withFlex (1));
+        fb.performLayout (area);
     }
     
     ~Typography(){
