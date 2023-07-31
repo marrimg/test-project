@@ -11,7 +11,6 @@
 #pragma once
 #include "amui.h"
 #include "GUI_Classes.h"
-#include "PluginEditor.h"
 #include "PluginProcessor.h"
 #include "Sections_Header.h"
 #include "Sections_Inputs.h"
@@ -47,13 +46,6 @@ public:
         area.removeFromBottom(padding);
         area.removeFromTop(padding);
         
-        juce::Grid grid;
-        
-        using Track = juce::Grid::TrackInfo;
-        using fr = juce::Grid::Fr;
-        using px = juce::Grid::Px;
-        using gridItem = juce::GridItem;
-        
         juce::FlexBox fb;
         fb.flexDirection = juce::FlexBox::Direction::column;
 
@@ -73,7 +65,6 @@ public:
     
 private:
     int padding = 10;
-    int gap = 2;
     AntimatterUITemplateAudioProcessor& classMemberProcessor;
     Header header;
     Inputs inputs;

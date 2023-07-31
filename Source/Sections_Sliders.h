@@ -10,10 +10,7 @@
 
 #pragma once
 #include "amui.h"
-#include "GUI_Classes.h"
-#include "PluginEditor.h"
 #include "PluginProcessor.h"
-#include "Sections_Header.h"
 
 class Sliders: public juce::Component
 {

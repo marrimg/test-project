@@ -10,10 +10,9 @@
 
 #pragma once
 #include "amui.h"
-#include "GUI_Classes.h"
-#include "PluginEditor.h"
 #include "PluginProcessor.h"
-#include "Sections_Header.h"
+
+/* UI input elements */
 
 class Inputs: public juce::Component
 {
@@ -41,13 +40,6 @@ public:
         area.removeFromBottom(padding);
         area.removeFromTop(padding);
         
-        juce::Grid grid;
-        
-        using Track = juce::Grid::TrackInfo;
-        using fr = juce::Grid::Fr;
-        using px = juce::Grid::Px;
-        using gridItem = juce::GridItem;
-        
         juce::FlexBox fb;
         fb.flexDirection = juce::FlexBox::Direction::column;
 
@@ -65,7 +57,6 @@ public:
     
 private:
     int padding = 10;
-    int gap = 2;
     AntimatterUITemplateAudioProcessor& classMemberProcessor;
     amui::TextHeader textHeader { "Inputs", amui::TextHeader::levels::SECONDARY };
     amui::ComboBox comboBox { Inputs::classMemberProcessor, "ComboBoxDemoState", {"combobox option 1", "combobox option 2", "combobox option 3"} };

@@ -11,6 +11,8 @@
 #pragma once
 #include "amui.h"
 
+/* Ui elements that give visual feedback to the user */
+
 class Feedback: public juce::Component
 {
     
@@ -44,13 +46,6 @@ public:
         addAndMakeVisible(ledHeader);
         addAndMakeVisible(ledOn);
         addAndMakeVisible(ledOff);
-        
-        juce::Grid grid;
-        
-        using Track = juce::Grid::TrackInfo;
-        using fr = juce::Grid::Fr;
-        using px = juce::Grid::Px;
-        using gridItem = juce::GridItem;
         
         juce::FlexBox fb;
         fb.flexWrap = juce::FlexBox::Wrap::wrap;

@@ -10,10 +10,8 @@
 
 #pragma once
 #include "amui.h"
-#include "GUI_Classes.h"
-#include "PluginEditor.h"
-#include "PluginProcessor.h"
-#include "Sections_Header.h"
+
+/* Typography elements */
 
 class Typography: public juce::Component
 {
@@ -41,12 +39,6 @@ public:
     
     void resized() override
     {
-        juce::Grid grid;
-        
-        using Track = juce::Grid::TrackInfo;
-        using fr = juce::Grid::Fr;
-        using px = juce::Grid::Px;
-        using gridItem = juce::GridItem;
         
         auto area = getLocalBounds();
         area.removeFromRight(padding);
@@ -70,7 +62,6 @@ public:
     
 private:
     int padding = 10;
-    int gap = 2;
     amui::TextHeader sectionHeader { "Typography", amui::TextHeader::levels::SECONDARY };
     amui::TextHeader primaryTextHeader { "Primary TextHeader" };
     amui::TextHeader secondaryTextHeader { "Secondary TextHeader", amui::TextHeader::levels::SECONDARY };
