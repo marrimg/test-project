@@ -20,6 +20,7 @@ class Inputs: public juce::Component
 public:
     Inputs(AntimatterUITemplateAudioProcessor& p): classMemberProcessor(p)
     {
+        /* Adds and makes all of the components that we want to display in this section visible. */
         addAndMakeVisible(textHeader);
         addAndMakeVisible(comboBox);
     }
@@ -38,6 +39,7 @@ public:
         area.removeFromBottom(padding);
         area.removeFromTop(padding);
         
+        /* Creates a FlexBox layout and adds the components to the layout. Performs the layout within the area that we set up above. */
         juce::FlexBox fb;
         fb.flexDirection = juce::FlexBox::Direction::column;
 

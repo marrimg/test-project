@@ -20,6 +20,7 @@ class Sliders: public juce::Component
 public:
     Sliders(AntimatterUITemplateAudioProcessor& p): classMemberProcessor(p)
     {
+        /* Adds and makes all of the components that we want to display in this section visible. */
         addAndMakeVisible(textHeader);
         addAndMakeVisible(sliderVertical);
         addAndMakeVisible(sliderHorizontal);
@@ -40,6 +41,7 @@ public:
         area.removeFromBottom(padding);
         area.removeFromTop(padding);
         
+        /* Creates a FlexBox layout and adds the components to the layout. Performs the layout within the area that we set up above. */
         juce::FlexBox fb;
         fb.flexWrap = juce::FlexBox::Wrap::wrap;
         juce::FlexItem top  ((float) getWidth(), (float) getHeight()/2.0f, textHeader);

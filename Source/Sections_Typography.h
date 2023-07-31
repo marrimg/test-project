@@ -19,6 +19,7 @@ class Typography: public juce::Component
 public:
     Typography()
     {
+        /* Adds and makes all of the components that we want to display in this section visible. */
         addAndMakeVisible(sectionHeader);
         addAndMakeVisible(primaryTextHeader);
         addAndMakeVisible(secondaryTextHeader);
@@ -42,6 +43,7 @@ public:
         juce::FlexBox fb;
         fb.flexDirection = juce::FlexBox::Direction::column;
 
+        /* Creates a FlexBox layout and adds the components to the layout. Performs the layout within the area that we set up above. */
         fb.items.add(juce::FlexItem(sectionHeader).withFlex (1));
         fb.items.add(juce::FlexItem(primaryTextHeader).withFlex (1));
         fb.items.add(juce::FlexItem(secondaryTextHeader).withFlex (1));

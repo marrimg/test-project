@@ -11,7 +11,7 @@
 #pragma once
 #include "amui.h"
 
-/* Ui elements that give visual feedback to the user */
+/* UI elements that give visual feedback to the user */
 
 class Feedback: public juce::Component
 {
@@ -19,6 +19,7 @@ class Feedback: public juce::Component
 public:
     Feedback()
     {
+        /* Adds and makes all of the components that we want to display in this section visible. */
         addAndMakeVisible(textHeader);
         addAndMakeVisible(ledHeader);
         addAndMakeVisible(ledOn);
@@ -27,19 +28,17 @@ public:
     
     void resized() override
     {
+        /* Sets the state of the LED to ON */
+        ledOn.setState(amui::LED::states::ON);
+        
         /* Creates a rectangle for the area of the component that has padding subtracted from it. This will create padding around the component. */
         auto area = getLocalBounds();
         area.removeFromRight(padding);
         area.removeFromLeft(padding);
         area.removeFromBottom(padding);
         area.removeFromTop(padding);
-        
-        textHeader.setBounds(area);
-        ledHeader.setBounds(area);
-        ledOn.setBounds(area);
-        ledOff.setBounds(area);
-        ledOn.setState(amui::LED::states::ON);
-        
+
+        /* Creates a FlexBox layout and adds the components to the layout. Performs the layout within the area that we set up above. */
         juce::FlexBox fb;
         fb.flexWrap = juce::FlexBox::Wrap::wrap;
         juce::FlexItem title  ((float) getWidth(), (float) getHeight()/4.0f, textHeader);

@@ -12,7 +12,7 @@
 #pragma once
 #include "amui.h"
 
-/* Main page header */
+/* Main page header. Currently displays a text header only. */
 
 class Header: public juce::Component
 {
@@ -20,6 +20,7 @@ class Header: public juce::Component
 public:
     Header(AntimatterUITemplateAudioProcessor& p)
     {
+        /* Adds and makes all of the components that we want to display in this section visible. */
         addAndMakeVisible(textHeader);
     }
     

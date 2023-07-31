@@ -32,6 +32,7 @@ class Main: public juce::Component
 public:
     Main(AntimatterUITemplateAudioProcessor& p): classMemberProcessor(p), header(p), inputs(p), buttons(p), sliders(p)
     {
+        /* Adds and makes all of the components that we want to display in this section visible. */
         addAndMakeVisible(header);
         addAndMakeVisible(inputs);
         addAndMakeVisible(buttons);
@@ -54,6 +55,7 @@ public:
         area.removeFromBottom(padding);
         area.removeFromTop(padding);
         
+        /* Creates a FlexBox layout and adds the components to the layout. Performs the layout within the area that we set up above. */
         juce::FlexBox fb;
         fb.flexDirection = juce::FlexBox::Direction::column;
 
