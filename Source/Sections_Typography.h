@@ -19,13 +19,6 @@ class Typography: public juce::Component
 public:
     Typography()
     {
-
-        auto area = getLocalBounds();
-    
-        sectionHeader.setBounds(area);
-        primaryTextHeader.setBounds(area);
-        secondaryTextHeader.setBounds(area);
-        textBlock.setBounds(area);
         addAndMakeVisible(sectionHeader);
         addAndMakeVisible(primaryTextHeader);
         addAndMakeVisible(secondaryTextHeader);
@@ -39,7 +32,7 @@ public:
     
     void resized() override
     {
-        
+        /* Creates a rectangle for the area of the component that has padding subtracted from it. This will create padding around the component. */
         auto area = getLocalBounds();
         area.removeFromRight(padding);
         area.removeFromLeft(padding);

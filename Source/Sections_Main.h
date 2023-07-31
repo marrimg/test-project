@@ -19,6 +19,13 @@
 #include "Sections_Typography.h"
 #include "Sections_Feedback.h"
 
+/*
+ This file is the main page layout for the module.
+ It currently displays a demo layout of all the UI elements in the AMUI UI library.
+ The elements that are displayed in the demo are split up into separate files by category. These files are imported above.
+ You can reuse these category files to create sections for a real module layout, or create new files for each section and import them to this file.
+ */
+
 class Main: public juce::Component
 {
     
@@ -40,6 +47,7 @@ public:
     
     void resized() override
     {
+        /* Creates a rectangle for the area of the component that has padding subtracted from it. This will create padding around the component. */
         auto area = getLocalBounds();
         area.removeFromRight(padding);
         area.removeFromLeft(padding);

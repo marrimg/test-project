@@ -12,14 +12,14 @@
 #pragma once
 #include "amui.h"
 
+/* Main page header */
+
 class Header: public juce::Component
 {
     
 public:
     Header(AntimatterUITemplateAudioProcessor& p)
     {
-        auto area = getLocalBounds();
-        textHeader.setBounds(area);
         addAndMakeVisible(textHeader);
     }
     

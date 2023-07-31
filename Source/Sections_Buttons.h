@@ -12,16 +12,14 @@
 #include "amui.h"
 #include "PluginProcessor.h"
 
+/* Buttons */
+
 class Buttons: public juce::Component
 {
     
 public:
     Buttons(AntimatterUITemplateAudioProcessor& p): classMemberProcessor(p)
     {
-
-        auto area = getLocalBounds();
-        textHeader.setBounds(area);
-        textButton.setBounds (area);
         addAndMakeVisible(textHeader);
         addAndMakeVisible(textButton);
     }
@@ -33,7 +31,7 @@ public:
     
     void resized() override
     {
-        
+        /* Creates a rectangle for the area of the component that has padding subtracted from it. This will create padding around the component. */
         auto area = getLocalBounds();
         area.removeFromRight(padding);
         area.removeFromLeft(padding);

@@ -19,10 +19,6 @@ class Feedback: public juce::Component
 public:
     Feedback()
     {
-        auto area = getLocalBounds();
-        textHeader.setBounds(area);
-        ledOn.setBounds(area);
-        ledOff.setBounds(area);
         addAndMakeVisible(textHeader);
         addAndMakeVisible(ledOn);
         addAndMakeVisible(ledOff);
@@ -30,6 +26,7 @@ public:
     
     void resized() override
     {
+        /* Creates a rectangle for the area of the component that has padding subtracted from it. This will create padding around the component. */
         auto area = getLocalBounds();
         area.removeFromRight(padding);
         area.removeFromLeft(padding);

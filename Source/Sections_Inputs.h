@@ -20,9 +20,6 @@ class Inputs: public juce::Component
 public:
     Inputs(AntimatterUITemplateAudioProcessor& p): classMemberProcessor(p)
     {
-        auto area = getLocalBounds();
-        textHeader.setBounds(area);
-        comboBox.setBounds(area);
         addAndMakeVisible(textHeader);
         addAndMakeVisible(comboBox);
     }
@@ -34,6 +31,7 @@ public:
     
     void resized() override
     {
+        /* Creates a rectangle for the area of the component that has padding subtracted from it. This will create padding around the component. */
         auto area = getLocalBounds();
         area.removeFromRight(padding);
         area.removeFromLeft(padding);

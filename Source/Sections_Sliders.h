@@ -12,14 +12,14 @@
 #include "amui.h"
 #include "PluginProcessor.h"
 
+/* Knobs and sliders */
+
 class Sliders: public juce::Component
 {
     
 public:
     Sliders(AntimatterUITemplateAudioProcessor& p): classMemberProcessor(p)
     {
-        auto area = getLocalBounds();
-        textHeader.setBounds(area);
         addAndMakeVisible(textHeader);
         addAndMakeVisible(sliderVertical);
         addAndMakeVisible(sliderHorizontal);
@@ -33,6 +33,7 @@ public:
     
     void resized() override
     {
+        /* Creates a rectangle for the area of the component that has padding subtracted from it. This will create padding around the component. */
         auto area = getLocalBounds();
         area.removeFromRight(padding);
         area.removeFromLeft(padding);
