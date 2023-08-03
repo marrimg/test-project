@@ -9,7 +9,7 @@
 */
 
 #pragma once
-#include "amui.h"
+#include "amui/amui.h"
 #include "PluginProcessor.h"
 
 /* Knobs and sliders */

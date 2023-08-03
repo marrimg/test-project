@@ -6,17 +6,17 @@
               companyName="antimatter">
   <MAINGROUP id="ImLGRz" name="antimatter-ui-template">
     <GROUP id="{4D6A5CEB-7469-1E24-85E2-69B2B174E174}" name="amui">
-      <FILE id="THKAuc" name="amui_LED.h" compile="0" resource="0" file="Source/amui_LED.h"/>
-      <FILE id="F1JY05" name="amui_TextBlock.h" compile="0" resource="0"
-            file="Source/amui_TextBlock.h"/>
-      <FILE id="iw1RuK" name="amui.h" compile="0" resource="0" file="Source/amui.h"/>
-      <FILE id="YurprL" name="amui_ComboBox.h" compile="0" resource="0" file="Source/amui_ComboBox.h"/>
-      <FILE id="rRmWUb" name="amui_TextHeader.h" compile="0" resource="0"
-            file="Source/amui_TextHeader.h"/>
-      <FILE id="eLxdIX" name="amui_Slider.h" compile="0" resource="0" file="Source/amui_Slider.h"/>
-      <FILE id="o4BRH8" name="amui_Knob.h" compile="0" resource="0" file="Source/amui_Knob.h"/>
-      <FILE id="zTCZYR" name="amui_TextButton.h" compile="0" resource="0"
-            file="Source/amui_TextButton.h"/>
+      <FILE id="VrxhvV" name="amui.h" compile="0" resource="0" file="Source/amui/amui.h"/>
+      <FILE id="p5mHGy" name="amui_ComboBox.h" compile="0" resource="0" file="Source/amui/amui_ComboBox.h"/>
+      <FILE id="r8A4gI" name="amui_Knob.h" compile="0" resource="0" file="Source/amui/amui_Knob.h"/>
+      <FILE id="MXtCf2" name="amui_LED.h" compile="0" resource="0" file="Source/amui/amui_LED.h"/>
+      <FILE id="OXg5HZ" name="amui_Slider.h" compile="0" resource="0" file="Source/amui/amui_Slider.h"/>
+      <FILE id="PViG5d" name="amui_TextBlock.h" compile="0" resource="0"
+            file="Source/amui/amui_TextBlock.h"/>
+      <FILE id="IGw354" name="amui_TextButton.h" compile="0" resource="0"
+            file="Source/amui/amui_TextButton.h"/>
+      <FILE id="B4tUz2" name="amui_TextHeader.h" compile="0" resource="0"
+            file="Source/amui/amui_TextHeader.h"/>
     </GROUP>
     <GROUP id="{2A8AA373-2931-7AB1-92EF-9C59E3B5435D}" name="Resources">
       <FILE id="FhpD7u" name="HelveticaNeue.ttc" compile="0" resource="1"

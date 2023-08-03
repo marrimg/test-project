@@ -9,7 +9,7 @@
 */
 
 #pragma once
-#include "amui.h"
+#include "amui/amui.h"
 #include "GUI_Classes.h"
 #include "PluginProcessor.h"
 #include "Sections_Header.h"

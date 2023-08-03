@@ -9,7 +9,7 @@
 */
 
 #pragma once
-#include "amui.h"
+#include "amui/amui.h"
 
 /* UI elements that give visual feedback to the user */
 

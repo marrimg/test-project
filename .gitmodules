@@ -1,0 +1,3 @@
+[submodule "amui"]
+	path = Source/amui
+	url = git@github.com:antimatteraudio/amui.git

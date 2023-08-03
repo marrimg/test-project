@@ -10,7 +10,7 @@
 
 
 #pragma once
-#include "amui.h"
+#include "amui/amui.h"
 
 /* Main page header. Currently displays a text header only. */
 

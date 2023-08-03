@@ -9,7 +9,7 @@
 */
 
 #pragma once
-#include "amui.h"
+#include "amui/amui.h"
 
 /* Typography elements */
 
